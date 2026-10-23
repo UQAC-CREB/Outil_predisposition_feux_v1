@@ -467,6 +467,25 @@ function bindLayerPanel() {
     $('layers-panel').classList.toggle('collapsed');
     $('lp-arrow').textContent = $('layers-panel').classList.contains('collapsed') ? '▸' : '▾';
   });
+  initLayersResize();
+}
+
+/** Largeur du panneau des couches ajustable par son bord gauche (mémorisée dans le navigateur). */
+function initLayersResize() {
+  const lp = $('layers-panel'), KEY = 'mamh-lp-width';
+  const clamp = (w) => Math.round(Math.min(Math.max(w, 260), S.map.getContainer().clientWidth * 0.7));
+  try { const w = +localStorage.getItem(KEY); if (w) lp.style.width = `${clamp(w)}px`; } catch (e) { /* stockage indisponible */ }
+  let x0 = null, w0 = 0;
+  $('lp-resize').addEventListener('pointerdown', (e) => {
+    x0 = e.clientX; w0 = lp.offsetWidth; lp.classList.add('resizing'); document.body.style.userSelect = 'none';
+    e.target.setPointerCapture(e.pointerId); e.preventDefault();
+  });
+  $('lp-resize').addEventListener('pointermove', (e) => { if (x0 !== null) lp.style.width = `${clamp(w0 + x0 - e.clientX)}px`; });
+  $('lp-resize').addEventListener('pointerup', () => {
+    if (x0 === null) return;
+    x0 = null; lp.classList.remove('resizing'); document.body.style.userSelect = '';
+    try { localStorage.setItem(KEY, lp.offsetWidth); } catch (e) { /* stockage indisponible */ }
+  });
 }
 
 function setLayer(id, on) {

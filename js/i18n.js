@@ -361,6 +361,7 @@ const EN_STATIC = {
   'zoneFile.help': 'Click or drag and drop a polygon file: it becomes the regional area.',
   'drop.hint': 'Drop the project file',
   'idx.label': 'Forest fire predisposition index',
+  'title.lpResize': 'Drag to adjust the panel width',
   'title.idxInfo': 'What is the predisposition index?', 'leg.idxTitle': 'Forest fire predisposition index',
   'lowHigh': 'Low → High',
   'box.mrc': 'INFO-TERRITORY', 'box.lh': 'INFO-PROJECT',
