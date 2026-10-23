@@ -1,4 +1,4 @@
-// Rapport PDF généré dans le navigateur (jsPDF) — fiche territoire + une fiche par site du projet
+// Rapport PDF généré dans le navigateur (jsPDF) - fiche territoire + une fiche par site du projet
 import { YEAR_END, PT_YEAR_END, COLORS, BASEMAP } from './config.js';
 import { occChart, supChart, hbarChart, svgToPng, fmtInt, fmtPct } from './charts.js';
 import { loadProvince } from './data.js';

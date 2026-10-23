@@ -344,7 +344,7 @@ export async function readGeoFiles(fileList) {
     } catch (err) {
       if (err instanceof GeoImportError) throw err;
       console.error(err);
-      throw new GeoImportError('read', { msg: `${f.name} — ${err.message || err}` });
+      throw new GeoImportError('read', { msg: `${f.name} - ${err.message || err}` });
     }
   }
   const features = [];

@@ -47,7 +47,7 @@ export function applyStatic() {
 
 // ── Classes de combustibles et de potentiel ────────────────────────────────
 const COMB_EN = {
-  1: 'Spruce–lichen woodland', 2: 'Boreal spruce', 3: 'Mature jack pine', 5: 'Red and white pine',
+  1: 'Spruce-lichen woodland', 2: 'Boreal spruce', 3: 'Mature jack pine', 5: 'Red and white pine',
   6: 'Conifer plantation', 7: 'Grass with conifers (ponderosa pine)', 8: 'Deciduous stands',
   9: 'Boreal mixedwood <50% conifer', 10: 'Boreal mixedwood >50% conifer',
   11: 'Mixedwood with dead balsam fir <50%', 12: 'Mixedwood with dead balsam fir >50%', 13: 'Mixedwood with dead balsam fir 100%',
@@ -67,9 +67,9 @@ export const pShort = (c) => (c.v === 0 ? (lang === 'en' ? 'No fuel' : 'Absence 
 
 // ── Textes générés ─────────────────────────────────────────────────────────
 const STR = {
-  'app.title': ["Prédisposition aux feux de forêt d'un projet — outil d'aide à la décision", 'Forest fire predisposition of a project — decision support tool'],
+  'app.title': ["Prédisposition aux feux de forêt d'un projet - outil d'aide à la décision", 'Forest fire predisposition of a project - decision support tool'],
   'mrc': ['MRC', 'RCM'],
-  'loading.error': ['Erreur de chargement — voir la console.', 'Loading error — see the console.'],
+  'loading.error': ['Erreur de chargement - voir la console.', 'Loading error - see the console.'],
   'err.generic': ['Une erreur est survenue. Si l’application ne répond plus, rechargez la page ; pour nous aider, copiez le rapport d’erreur et transmettez-le à l’équipe.',
     'An error occurred. If the application stops responding, reload the page; to help us, copy the error report and send it to the team.'],
   'err.webgl': ['La carte a perdu l’accès à la carte graphique (mémoire insuffisante probable). Rechargez la page ; pour nous aider, copiez le rapport d’erreur.',
@@ -82,24 +82,24 @@ const STR = {
   'proj.help': ['Cliquez ou glissez-déposez un fichier : points, lignes ou polygones (camp, route, ligne électrique, éoliennes…).', 'Click or drag and drop a file: points, lines or polygons (camp, road, power line, wind turbines…).'],
   'proj.reading': ['Lecture du fichier…', 'Reading the file…'],
   'imp.title': ["Projet importé", "Project imported"],
-  'imp.proj': ["<b>INFO-PROJET</b> — Le portrait des combustibles et du potentiel d'intensité et de propagation des feux est calculé dans une zone tampon de <b>{buf} km</b> autour des entités du projet. Ajustez ce rayon (1 à 50 km) avec le curseur de la fiche INFO-PROJET.",
-    "<b>INFO-PROJECT</b> — The portrait of fuels and of fire intensity and spread potential is computed within a <b>{buf}-km</b> buffer zone around the project features. Adjust this radius (1 to 50 km) with the slider of the INFO-PROJECT sheet."],
-  'imp.auto': ["<b>INFO-TERRITOIRE</b> — Les feux étant rares à l'échelle d'un site, leur historique est calculé dans une zone régionale plus vaste : un carré de <b>{s} km × {s} km</b> centré sur le projet (contour noir pointillé sur la carte). Pour changer sa taille, ou choisir plutôt une MRC, un rectangle ou votre propre zone, utilisez la section <b>2. Zone régionale</b>.",
-    "<b>INFO-TERRITORY</b> — Since fires are rare at the scale of a single site, their history is computed over a larger regional area: a <b>{s} km × {s} km</b> square centred on the project (dashed black outline on the map). To change its size, or to choose an RCM, a rectangle or your own area instead, use section <b>2. Regional area</b>."],
+  'imp.proj': ["<b>INFO-PROJET</b> - Le portrait des combustibles et du potentiel d'intensité et de propagation des feux est calculé dans une zone tampon de <b>{buf} km</b> autour des entités du projet. Ajustez ce rayon (1 à 50 km) avec le curseur de la fiche INFO-PROJET.",
+    "<b>INFO-PROJECT</b> - The portrait of fuels and of fire intensity and spread potential is computed within a <b>{buf}-km</b> buffer zone around the project features. Adjust this radius (1 to 50 km) with the slider of the INFO-PROJECT sheet."],
+  'imp.auto': ["<b>INFO-TERRITOIRE</b> - À l'échelle d'un site (50 km de rayon), il est possible que l'occurrence des feux soit rare. L'historique des feux est ainsi calculé dans une zone régionale plus vaste : un carré de <b>{s} km × {s} km</b> centré sur le projet (contour noir pointillé sur la carte). Pour changer sa taille, ou choisir plutôt une MRC, un rectangle ou votre propre zone, utilisez la section <b>2. Zone régionale</b>.",
+    "<b>INFO-TERRITORY</b> - At the scale of a single site (50-km radius), fire occurrences may be rare. The fire history is therefore computed over a larger regional area: a <b>{s} km × {s} km</b> square centred on the project (dashed black outline on the map). To change its size, or to choose an RCM, a rectangle or your own area instead, use section <b>2. Regional area</b>."],
   'imp.big': ["Le carré a été agrandi pour couvrir toutes les entités du projet.", "The square was enlarged to cover all project features."],
-  'imp.other': ["<b>INFO-TERRITOIRE</b> — L'historique des feux est calculé dans la zone régionale choisie à la section <b>2. Zone régionale</b>.",
-    "<b>INFO-TERRITORY</b> — The fire history is computed within the regional area chosen in section <b>2. Regional area</b>."],
+  'imp.other': ["<b>INFO-TERRITOIRE</b> - L'historique des feux est calculé dans la zone régionale choisie à la section <b>2. Zone régionale</b>.",
+    "<b>INFO-TERRITORY</b> - The fire history is computed within the regional area chosen in section <b>2. Regional area</b>."],
   'imp.sites': ["Le projet compte <b>{n} sites</b> (entités à plus de {d} km les unes des autres), chacun avec sa fiche INFO-PROJET : choisissez le site dans la liste sous l'import ou cliquez-le sur la carte.",
     "The project has <b>{n} sites</b> (features more than {d} km apart), each with its own INFO-PROJECT sheet: choose the site in the list below the import button or click it on the map."],
   'proj.summary': ['{n} entité(s)', '{n} feature(s)'],
   'proj.sites': ['{n} sites : entités à plus de {d} km les unes des autres, une fiche INFO-PROJET par site.', '{n} sites: features more than {d} km apart, one INFO-PROJECT sheet per site.'],
   'site.n': ['Site {k}', 'Site {k}'],
   'site.ph': ['Choisissez un site ({n})…', 'Choose a site ({n})…'],
-  'site.ph.first': ['— Importez d’abord un projet —', '— Import a project first —'],
+  'site.ph.first': ['- Importez d’abord un projet -', '- Import a project first -'],
   'ty.pt': ['{n} point(s)', '{n} point(s)'],
   'ty.line': ['{n} ligne(s)', '{n} line(s)'],
   'ty.poly': ['{n} polygone(s)', '{n} polygon(s)'],
-  'tt.projClick': ['entité du projet — cliquez pour afficher le site', 'project feature — click to show the site'],
+  'tt.projClick': ['entité du projet - cliquez pour afficher le site', 'project feature - click to show the site'],
   'imp.format': ['Format « .{ext} » non pris en charge. Voir les formats acceptés (ℹ).', 'Unsupported “.{ext}” format. See accepted formats (ℹ).'],
   'imp.empty': ['Aucune géométrie lisible dans le fichier.', 'No readable geometry in the file.'],
   'imp.crs': ['Coordonnées projetées sans système de coordonnées : ajoutez le fichier .prj (Shapefile), un membre « crs » (GeoJSON) ou utilisez des degrés WGS84 (CSV, WKT).', 'Projected coordinates without a coordinate system: add the .prj file (Shapefile), a “crs” member (GeoJSON) or use WGS84 degrees (CSV, WKT).'],
@@ -119,12 +119,12 @@ const STR = {
   'lh.first': ['Importez l’emprise du projet pour afficher les combustibles dans la zone tampon.', 'Import the project footprint to display the fuels within the buffer zone.'],
   'pdf.project': ['Projet :', 'Project:'],
   'pdf.site': ['Site {k} sur {n}', 'Site {k} of {n}'],
-  'fmt.tip': ['<b>Formats acceptés</b> (coordonnées reprojetées automatiquement) :<ul> <li><b>KML / KMZ</b> (Google Earth) : points, lignes, polygones, dossiers et géométries multiples.</li> <li><b>Shapefile</b> : archive <b>.zip</b> contenant .shp, .shx, .dbf et .prj, <i>ou</i> ces fichiers sélectionnés ensemble. Le <b>.prj</b> est requis si les coordonnées sont projetées.</li> <li><b>GeoJSON</b> (.geojson, .json) : WGS84 par défaut ; autre système par le membre « crs » (code EPSG).</li> <li><b>GeoPackage</b> (.gpkg) : toutes les couches vectorielles, système lu dans le fichier.</li> <li><b>GPX</b> : traces, routes et points.</li> <li><b>FlatGeobuf</b> (.fgb).</li> <li><b>CSV</b> : colonnes lon/lat (longitude/latitude, x/y) en degrés WGS84, ou une colonne WKT ; séparateur virgule, point-virgule ou tabulation.</li> <li><b>WKT</b> (.wkt) : une géométrie par ligne, en degrés WGS84.</li></ul> Systèmes reconnus par code EPSG : WGS84, NAD83, Québec Lambert (32198), MTM 1 à 10, UTM 17 à 21 N, Web Mercator, Lambert du Canada. Plusieurs fichiers peuvent être importés ensemble. <b>Non pris en charge</b> : géodatabase fichier Esri (.gdb) — exportez-la en GeoPackage ou en Shapefile.', '<b>Accepted formats</b> (coordinates are reprojected automatically):<ul> <li><b>KML / KMZ</b> (Google Earth): points, lines, polygons, folders and multi-geometries.</li> <li><b>Shapefile</b>: a <b>.zip</b> archive containing .shp, .shx, .dbf and .prj, <i>or</i> these files selected together. The <b>.prj</b> is required if coordinates are projected.</li> <li><b>GeoJSON</b> (.geojson, .json): WGS84 by default; other systems through the “crs” member (EPSG code).</li> <li><b>GeoPackage</b> (.gpkg): all vector layers, coordinate system read from the file.</li> <li><b>GPX</b>: tracks, routes and waypoints.</li> <li><b>FlatGeobuf</b> (.fgb).</li> <li><b>CSV</b>: lon/lat (longitude/latitude, x/y) columns in WGS84 degrees, or a WKT column; comma, semicolon or tab separator.</li> <li><b>WKT</b> (.wkt): one geometry per line, in WGS84 degrees.</li></ul> Coordinate systems recognized by EPSG code: WGS84, NAD83, Québec Lambert (32198), MTM 1 to 10, UTM 17 to 21 N, Web Mercator, Canada Lambert. Several files can be imported together. <b>Not supported</b>: Esri file geodatabase (.gdb) — export it to GeoPackage or Shapefile.'],
+  'fmt.tip': ['<b>Formats acceptés</b> (coordonnées reprojetées automatiquement) :<ul> <li><b>KML / KMZ</b> (Google Earth) : points, lignes, polygones, dossiers et géométries multiples.</li> <li><b>Shapefile</b> : archive <b>.zip</b> contenant .shp, .shx, .dbf et .prj, <i>ou</i> ces fichiers sélectionnés ensemble. Le <b>.prj</b> est requis si les coordonnées sont projetées.</li> <li><b>GeoJSON</b> (.geojson, .json) : WGS84 par défaut ; autre système par le membre « crs » (code EPSG).</li> <li><b>GeoPackage</b> (.gpkg) : toutes les couches vectorielles, système lu dans le fichier.</li> <li><b>GPX</b> : traces, routes et points.</li> <li><b>FlatGeobuf</b> (.fgb).</li> <li><b>CSV</b> : colonnes lon/lat (longitude/latitude, x/y) en degrés WGS84, ou une colonne WKT ; séparateur virgule, point-virgule ou tabulation.</li> <li><b>WKT</b> (.wkt) : une géométrie par ligne, en degrés WGS84.</li></ul> Systèmes reconnus par code EPSG : WGS84, NAD83, Québec Lambert (32198), MTM 1 à 10, UTM 17 à 21 N, Web Mercator, Lambert du Canada. Plusieurs fichiers peuvent être importés ensemble. <b>Non pris en charge</b> : géodatabase fichier Esri (.gdb) - exportez-la en GeoPackage ou en Shapefile.', '<b>Accepted formats</b> (coordinates are reprojected automatically):<ul> <li><b>KML / KMZ</b> (Google Earth): points, lines, polygons, folders and multi-geometries.</li> <li><b>Shapefile</b>: a <b>.zip</b> archive containing .shp, .shx, .dbf and .prj, <i>or</i> these files selected together. The <b>.prj</b> is required if coordinates are projected.</li> <li><b>GeoJSON</b> (.geojson, .json): WGS84 by default; other systems through the “crs” member (EPSG code).</li> <li><b>GeoPackage</b> (.gpkg): all vector layers, coordinate system read from the file.</li> <li><b>GPX</b>: tracks, routes and waypoints.</li> <li><b>FlatGeobuf</b> (.fgb).</li> <li><b>CSV</b>: lon/lat (longitude/latitude, x/y) columns in WGS84 degrees, or a WKT column; comma, semicolon or tab separator.</li> <li><b>WKT</b> (.wkt): one geometry per line, in WGS84 degrees.</li></ul> Coordinate systems recognized by EPSG code: WGS84, NAD83, Québec Lambert (32198), MTM 1 to 10, UTM 17 to 21 N, Web Mercator, Canada Lambert. Several files can be imported together. <b>Not supported</b>: Esri file geodatabase (.gdb) - export it to GeoPackage or Shapefile.'],
   // Carte
-  'tt.fireStart': ['Départ de feu — {d}', 'Fire start — {d}'],
+  'tt.fireStart': ['Départ de feu - {d}', 'Fire start - {d}'],
   'tt.cause': ['Cause : {c}', 'Cause: {c}'],
   'cause.h': ['humaine', 'human'], 'cause.f': ['foudre', 'lightning'],
-  'tt.fire': ['Feu de forêt — {y}', 'Forest fire — {y}'],
+  'tt.fire': ['Feu de forêt - {y}', 'Forest fire - {y}'],
   'tt.unitIdx': ['Indice moyen de la MRC : {m} ± {s}', 'RCM mean index: {m} ± {s}'],
   'tt.index': ['Indice de prédisposition : <b>{v}</b>', 'Predisposition index: <b>{v}</b>'],
   'tt.comb': ['Combustible : <b>{a}</b>{l}', 'Fuel: <b>{a}</b>{l}'],
@@ -145,14 +145,14 @@ const STR = {
   'zone.cleared': ['Zone effacée.', 'Area cleared.'],
   'lh.ph.choose': ['Tapez ou choisissez ({n})…', 'Type or choose ({n})…'],
   'lh.ph.none': ['Aucune communauté dans ce territoire', 'No community in this territory'],
-  'lh.ph.first': ['— Choisissez d’abord un territoire —', '— Choose a territory first —'],
+  'lh.ph.first': ['- Choisissez d’abord un territoire -', '- Choose a territory first -'],
   'mrc.sub': ['indice moyen {i}', 'mean index {i}'],
   'combo.none': ['Aucun résultat', 'No results'],
   // Indice
   'idx.none': ['Aucune donnée d’indice pour ce territoire.', 'No index data for this territory.'],
   'idx.choose': ['Choisissez un territoire pour afficher son indice moyen.', 'Choose a territory to display its mean index.'],
   'idx.meanSd': ['moyenne · écart-type <b>{s}</b>', 'mean · standard deviation <b>{s}</b>'],
-  'idx.note': ['{t} — {n} pixel(s) de 5 km.', '{t} — {n} 5-km pixel(s).'],
+  'idx.note': ['{t} - {n} pixel(s) de 5 km.', '{t} - {n} 5-km pixel(s).'],
   'idx.zone': ['Zone définie', 'Defined area'],
   'idx.short': ['Indice : <b>{m}</b> ± {s}', 'Index: <b>{m}</b> ± {s}'],
   'idx.shortTitle': ['Moyenne ± écart-type des pixels de 5 km de la zone tampon', 'Mean ± standard deviation of the 5-km pixels in the buffer zone'],
@@ -171,13 +171,13 @@ const STR = {
   'chart.logPdf': [' (échelle logarithmique)', ' (logarithmic scale)'],
   'leg.human': ['Humain', 'Human'], 'leg.lightning': ['Foudre', 'Lightning'],
   'leg.meanSd': ['Moyenne ± écart-type', 'Mean ± standard deviation'],
-  'summary.click': ['{t} — cliquez pour afficher les graphiques', '{t} — click to display the charts'],
+  'summary.click': ['{t} - cliquez pour afficher les graphiques', '{t} - click to display the charts'],
   // Graphiques (SVG)
   'ax.nFires': ['Nombre de feux', 'Number of fires'],
   'ax.rate': ['Taux / 100 000 ha comb.', 'Rate / 100,000 ha fuel'],
   'ax.burned': ['Superficie brûlée (ha)', 'Area burned (ha)'],
   'ax.pctFuel': ['% sup. combustible', '% of fuel area'],
-  'tip.occ': ['{n} feux — Humain : {h} · Foudre : {f}', '{n} fires — Human: {h} · Lightning: {f}'],
+  'tip.occ': ['{n} feux - Humain : {h} · Foudre : {f}', '{n} fires - Human: {h} · Lightning: {f}'],
   'tip.rate': ['Taux : {r} / 100 000 ha', 'Rate: {r} / 100,000 ha'],
   'tip.burned': ['{v} ha brûlés', '{v} ha burned'],
   'tip.pctFuel': ['{p} de la superficie combustible', '{p} of the fuel area'],
@@ -195,8 +195,8 @@ const STR = {
   'lh.chartA': ['A) Superficie des combustibles', 'A) Fuel area'],
   'lh.chartB': ['B) Potentiel d’intensité et de propagation', 'B) Fire intensity and spread potential'],
   'lh.bufferKm': ['Zone tampon : <b>{k} km</b>', 'Buffer zone: <b>{k} km</b>'],
-  'big.mrc': ['Fiche territoire — historique des feux', 'Territory sheet — fire history'],
-  'big.lh': ['Fiche projet — combustibles', 'Project sheet — fuels'],
+  'big.mrc': ['Fiche territoire - historique des feux', 'Territory sheet - fire history'],
+  'big.lh': ['Fiche projet - combustibles', 'Project sheet - fuels'],
   // Rapport (fenêtre)
   'rep.terr': ['Territoire : <b>{t}</b>', 'Territory: <b>{t}</b>'],
   'rep.territory': ['Zone régionale', 'Regional area'],
@@ -204,7 +204,7 @@ const STR = {
   'rep.err': ['Erreur : {e}', 'Error: {e}'],
   'rep.pick': ['Cochez au moins un site ou la page territoire.', 'Check at least one site or the territory page.'],
   'rep.lib': ['Bibliothèque PDF en cours de chargement, réessayez.', 'PDF library still loading, please retry.'],
-  'rep.step': ['Étape {i} / {n} — {t}', 'Step {i} / {n} — {t}'],
+  'rep.step': ['Étape {i} / {n} - {t}', 'Step {i} / {n} - {t}'],
   'rep.stepTerr': ['Page territoire…', 'Territory page…'],
   'rep.stepLh': ['Site {i} / {n} : {name}…', 'Site {i} / {n}: {name}…'],
   'rep.stepLeg': ['Page des légendes…', 'Legend page…'],
@@ -236,7 +236,7 @@ const STR = {
   'pdf.legLh': ['Fiche projet', 'Project sheet'],
 };
 
-// ── Légendes (fenêtres et page du PDF) — **gras** ───────────────────────────
+// ── Légendes (fenêtres et page du PDF) - **gras** ───────────────────────────
 export function LEGEND() {
   const fr = lang !== 'en';
   return {
@@ -315,7 +315,7 @@ export function LEGEND() {
 
 // ── HTML statique (anglais ; le français est lu dans index.html) ───────────
 const EN_STATIC = {
-  'hdr.title': 'Forest fire predisposition of a project<span class="hdr-sub">Decision support tool — portrait of fuels, intensity potential and fire history<span class="hdr-ver">version 1.0 (beta)</span></span>',
+  'hdr.title': 'Forest fire predisposition of a project<span class="hdr-sub">Decision support tool - portrait of fuels, intensity potential and fire history<span class="hdr-ver">version 1.0 (beta)</span></span>',
   'loading': 'Loading data…',
   'tab.intro': 'Instructions', 'tab.explore': 'Explore',
   'pop.title': 'Welcome: forest fires and decision support for your projects',
@@ -391,5 +391,5 @@ const EN_STATIC = {
   'ly.comb': 'Fuels 2025', 'ly.pot': 'Fire intensity and spread potential',
   'ly.rasterNote': 'Fuels and potential cover all of Québec.',
   'fiche.title': 'Sheet',
-  'leg.mrcTitle': 'Legend — Territory sheet', 'leg.lhTitle': 'Legend — Project sheet',
+  'leg.mrcTitle': 'Legend - Territory sheet', 'leg.lhTitle': 'Legend - Project sheet',
 };

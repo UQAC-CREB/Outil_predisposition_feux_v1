@@ -1,4 +1,4 @@
-// MAMH — Prédisposition aux feux de forêt d'un projet — outil d'aide à la décision (v1.0 ; dossier web_v3)
+// MAMH - Prédisposition aux feux de forêt d'un projet - outil d'aide à la décision (v1.0 ; dossier web_v3)
 //  1. l'utilisateur importe l'emprise d'un projet (points, lignes, polygones) → sites (entités à moins de 50 km)
 //  2. INFO-PROJET : combustibles et potentiel I/P dans une zone tampon de 1 à 50 km autour du site choisi
 //  3. INFO-TERRITOIRE : historique des feux dans une zone régionale (carré automatique, MRC, rectangle, zone importée)
@@ -52,7 +52,7 @@ export function indexColor(v) {
   }
   return INDEX_PALETTE.at(-1)[1];
 }
-export const fmtIdx = (v) => (v == null ? '—' : (+v).toLocaleString(loc(), { minimumFractionDigits: 2, maximumFractionDigits: 2 }));
+export const fmtIdx = (v) => (v == null ? '-' : (+v).toLocaleString(loc(), { minimumFractionDigits: 2, maximumFractionDigits: 2 }));
 
 export function geomBBox(g) {
   let x0 = Infinity, y0 = Infinity, x1 = -Infinity, y1 = -Infinity;
@@ -101,7 +101,7 @@ export function siteSub(site, { names = true } = {}) {
   const parts = Object.entries(ty).map(([k, n]) => t(TYPE_KEYS[k], { n }));
   const nm = [...new Set(site.feats.map(i => S.project.features[i].properties.name).filter(Boolean))];
   const nmTxt = names && nm.length && !(S.project.sites.length === 1 && nm.length === 1 && nm[0] === S.project.name)
-    ? ` — ${nm.slice(0, 3).join(', ')}${nm.length > 3 ? '…' : ''}` : '';
+    ? ` - ${nm.slice(0, 3).join(', ')}${nm.length > 3 ? '…' : ''}` : '';
   return parts.join(' · ') + nmTxt;
 }
 
@@ -323,7 +323,7 @@ function bindMapEvents() {
       const c = (k === 'comb' ? combByV : potByV).get(v);
       if (!c) return;
       lines.push(k === 'comb'
-        ? `${sw(c.hex)}${t('tt.comb', { a: cAbb(c), l: cLbl(c) !== cAbb(c) ? ` — ${cLbl(c)}` : '' })}`
+        ? `${sw(c.hex)}${t('tt.comb', { a: cAbb(c), l: cLbl(c) !== cAbb(c) ? ` - ${cLbl(c)}` : '' })}`
         : `${sw(c.hex)}${t('tt.pot', { l: pLbl(c) })}`);
     });
     render();
@@ -409,7 +409,7 @@ function applyYears() {
   const pct = (y) => `${(y - lo) / (hi - lo) * 100}%`;
   $('yr-shade-a').style.width = pct(a);
   $('yr-shade-b').style.left = pct(b);
-  $('yr-sel').textContent = a === b ? `${a}` : `${a} – ${b}`;
+  $('yr-sel').textContent = a === b ? `${a}` : `${a} - ${b}`;
   const f = ['all', ['>=', ['get', 'an'], a], ['<=', ['get', 'an'], b]];
   ['feux-fill', 'feux-line', 'pts'].forEach(id => S.map.setFilter(id, f));
 }
@@ -546,7 +546,7 @@ function projMsg() {
   const p = S.project, el = $('proj-msg');
   if (!p) { el.innerHTML = t('proj.help'); return; }
   const n = p.features.length;
-  el.innerHTML = `<b>${esc(p.name)}</b> — ${t('proj.summary', { n })}` +
+  el.innerHTML = `<b>${esc(p.name)}</b> - ${t('proj.summary', { n })}` +
     (p.sites.length > 1 ? `<br><span class="warn">${t('proj.sites', { n: p.sites.length, d: SITE_GAP_KM })}</span>` : '');
 }
 
@@ -712,7 +712,7 @@ export function selectUnit(id, { fit = true } = {}) {
   S.terrName = terrLabel();
   S.idx = f.properties.im != null ? { mean: f.properties.im, sd: f.properties.isd, n: f.properties.in } : null;
   S.series = unitSeries(S.core, id);
-  $('zone-msg').innerHTML = `<b>${esc(S.terrName)}</b> — ${t('zone.km2', { km2: fmtInt((f.properties.ha || 0) / 100) })}`;
+  $('zone-msg').innerHTML = `<b>${esc(S.terrName)}</b> - ${t('zone.km2', { km2: fmtInt((f.properties.ha || 0) / 100) })}`;
   renderIndex(); renderMRC();
   updateReportBtn();
 }
@@ -722,8 +722,8 @@ function zoneMsg() {
   const ha = S.series ? S.series.areaHa : 0;
   const k = S.zone.kind;
   $('zone-msg').innerHTML = S.zone.pending
-    ? `<b>${esc(S.terrName)}</b> — ${t('zone.computing')} <span class="spin-inline"></span>`
-    : `<b>${esc(S.terrName)}</b> — ${t('zone.km2', { km2: fmtInt(ha / 100) })}` +
+    ? `<b>${esc(S.terrName)}</b> - ${t('zone.computing')} <span class="spin-inline"></span>`
+    : `<b>${esc(S.terrName)}</b> - ${t('zone.km2', { km2: fmtInt(ha / 100) })}` +
       (k.k === 'auto' && k.enlarged ? `<br><span class="warn">${t('zone.enlarged', { km: S.autoKm })}</span>` : '');
 }
 
@@ -860,7 +860,7 @@ function chartWidth(el) { return Math.max(300, Math.round(el.clientWidth || 420)
 /** Contenu INFO-TERRITOIRE (panneau ou fiche agrandie). */
 function mrcHTML(w, big = false) {
   const s = S.series;
-  const period = `${s.y0}–${YEAR_END}`;
+  const period = `${s.y0}-${YEAR_END}`;
   const idx = S.idx ? `<span>${t('idx.short', { m: fmtIdx(S.idx.mean), s: fmtIdx(S.idx.sd) })}</span>` : '';
   const long = s.y0 < 1972;
   return `
@@ -896,7 +896,7 @@ function renderMRC() {
 
 // ── Graphiques combustibles / potentiel ────────────────────────────────────
 export function combRows(ha, classes) {
-  return classes.comb.map((c, k) => ({ label: cAbb(c), title: `${cAbb(c)} — ${cLbl(c)}`, ha: ha[k], color: c.hex, grpKey: c.grp, group: cGrp(c.grp) }));
+  return classes.comb.map((c, k) => ({ label: cAbb(c), title: `${cAbb(c)} - ${cLbl(c)}`, ha: ha[k], color: c.hex, grpKey: c.grp, group: cGrp(c.grp) }));
 }
 export function potRows(ha, classes) {
   return classes.pot.map((c, k) => ({ label: pShort(c), title: pLbl(c), ha: ha[k], color: c.hex })).reverse();
@@ -980,7 +980,7 @@ export function combGroups() {
 }
 
 export function idxVarsHTML(L) {
-  return `<ol class="vars-list">${L.idxVars.map(([n, d, p]) => `<li><b>${n}</b> — ${d} <span class="vars-p">P=${p}</span></li>`).join('')}</ol>`;
+  return `<ol class="vars-list">${L.idxVars.map(([n, d, p]) => `<li><b>${n}</b> - ${d} <span class="vars-p">P=${p}</span></li>`).join('')}</ol>`;
 }
 
 function buildLegends() {
@@ -997,7 +997,7 @@ function buildLegends() {
       <div class="leg-col-title">${L.lhComb.h}</div>
       <p class="leg-intro">${L.lhComb.p.map(mdBold).join('<br><br>')}<br>
         <a href="https://ressources-naturelles.canada.ca" target="_blank" rel="noopener">${L.links.fbp}</a></p>
-      ${combGroups().map(gr => `<div class="leg-group">${gr.label}</div>` + gr.items.map(c => row(c.hex, cAbb(c) === cLbl(c) ? cLbl(c) : `${cAbb(c)} — ${cLbl(c)}`)).join('')).join('')}
+      ${combGroups().map(gr => `<div class="leg-group">${gr.label}</div>` + gr.items.map(c => row(c.hex, cAbb(c) === cLbl(c) ? cLbl(c) : `${cAbb(c)} - ${cLbl(c)}`)).join('')).join('')}
     </div>
     <div>
       <div class="leg-col-title">${L.lhPot.h}</div>
