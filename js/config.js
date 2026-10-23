@@ -3,8 +3,8 @@
 export const IS_LOCAL = ['localhost', '127.0.0.1'].includes(location.hostname);
 
 // Tuiles raster PMTiles et contours de feux FlatGeobuf : servis localement en développement (scripts/serve.py),
-// depuis Cloudflare R2 en production. → Remplacer R2_TILES_URL après le téléversement des tuiles v3.
-export const R2_TILES_URL = 'https://pub-484da2c562d54ec39393660f95b0716a.r2.dev';   // bucket mamh-v2-carto (à créer pour la v3)
+// depuis Cloudflare R2 en production. → URL publique r2.dev du bucket.
+export const R2_TILES_URL = 'https://pub-c6416c57b4b1424f93179cc0c48d78e0.r2.dev';   // bucket outil-predisposition-feux-v1
 export const TILES_BASE = IS_LOCAL ? `${location.origin}${location.pathname.replace(/[^/]*$/, '')}tiles_v3` : R2_TILES_URL;
 export const TILES = {
   comb: `${TILES_BASE}/combustibles_2025_qc.pmtiles`,
