@@ -87,7 +87,7 @@ Fichiers de test : `../work_v3/*.kmz` (point, ligne, polygone, parc éolien).
 ## Mise en ligne (à faire)
 
 - Téléverser `tiles_v3/*.pmtiles` et `feux.fgb` sur Cloudflare R2 (fichiers > 300 Mo : `rclone`), puis inscrire l'URL dans `js/config.js` (`R2_TILES_URL`).
-- Rétablir le suivi des visites (balises Google et Umami de la v2, avec `data-tag="v3"`).
+- Suivi des visites : Umami (site partagé avec la v1/v2, `data-tag="outil-v1"`, domaine `uqac-creb.github.io` seulement).
 
 ---
 
