@@ -84,6 +84,12 @@ body {
   font-family: 'Oswald', sans-serif; font-size: 10px; letter-spacing: 1.4px;
   text-transform: uppercase; color: var(--text-muted);
 }
+.panel-label.step-label { font-size: 14px; font-weight: 600; letter-spacing: 1px; color: var(--header-text); }
+.info-btn {
+  width: 20px; height: 20px; border-radius: 50%; border: none; background: var(--accent); color: #fff; cursor: pointer;
+  font: italic 700 12.5px/1 Georgia, serif; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.info-btn:hover { background: var(--accent-dark); }
 .divider { border: none; border-top: 1px solid var(--panel-border); flex-shrink: 0; }
 
 .box {
@@ -276,6 +282,13 @@ body {
 .slider-row output { font-family: 'Oswald', sans-serif; font-size: 13px; min-width: 52px; text-align: right; }
 
 /* ── Sources & auteurs (onglet Introduction) ── */
+.intro-body { font-size: 12.5px; line-height: 1.55; display: flex; flex-direction: column; gap: 10px; }
+.intro-body p, .intro-body ol { margin: 0; }
+.intro-lead { font-size: 13.5px; }
+.intro-h { font-family: 'Oswald', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase;
+  color: var(--header-text); margin: 6px 0 0; border-bottom: 1.5px solid var(--panel-border); padding-bottom: 3px; }
+.intro-steps { padding-left: 20px; display: flex; flex-direction: column; gap: 7px; }
+.intro-warn { background: #fff8e1; border-left: 3px solid #d4821a; padding: 8px 10px; border-radius: 0 4px 4px 0; }
 .auteurs-box, #sources-section { font-size: 11px; color: var(--text-muted); line-height: 1.6; }
 .auteurs-box .auteur-title, #sources-section .src-title {
   font-family: 'Oswald', sans-serif; font-size: 10px; letter-spacing: 1.2px; text-transform: uppercase;

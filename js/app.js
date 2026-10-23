@@ -208,8 +208,8 @@ function addLayers() {
 
   // Zone régionale (automatique, tracée ou importée)
   map.addSource('zone', { type: 'geojson', data: EMPTY });
-  map.addLayer({ id: 'zone-fill', type: 'fill', source: 'zone', paint: { 'fill-color': COLORS.sel, 'fill-opacity': 0.05 } });
-  map.addLayer({ id: 'zone-line', type: 'line', source: 'zone', paint: { 'line-color': COLORS.sel, 'line-width': 2.5, 'line-dasharray': [2, 1.5] } });
+  map.addLayer({ id: 'zone-fill', type: 'fill', source: 'zone', paint: { 'fill-color': '#000', 'fill-opacity': 0.04 } });
+  map.addLayer({ id: 'zone-line', type: 'line', source: 'zone', paint: { 'line-color': '#000', 'line-width': 2.5, 'line-dasharray': [2, 1.5] } });
 
   // Zone tampon du site (coins arrondis) et masque grisé à l'extérieur
   map.addSource('buffer', { type: 'geojson', data: EMPTY });
@@ -951,7 +951,7 @@ export function idxVarsHTML(L) {
 
 function buildLegends() {
   const L = LEGEND();
-  $('idx-tip').innerHTML = `${L.idxConcept}<br><br><b>${L.idxVarsTitle}</b>${idxVarsHTML(L)}${L.idxVarsNote}<br><br>${L.idxScale}`;
+  $('idx-body').innerHTML = `<p>${L.idxConcept}</p><p><b>${L.idxVarsTitle}</b></p>${idxVarsHTML(L)}<p>${L.idxVarsNote}</p><p>${L.idxScale}</p>`;
   document.querySelectorAll('.fmt-tip').forEach(el => { el.innerHTML = t('fmt.tip'); });
   const row = (hex, txt) => `<div class="leg-row"><div class="leg-swatch" style="background:${hex}"></div><span>${txt}</span></div>`;
   const block = (b, extra = '') => `<div class="leg-block"><div class="leg-sub">${b.h}</div>${b.p.map(p => `<p>${mdBold(p)}</p>`).join('')}${extra}</div>`;
@@ -1118,6 +1118,7 @@ function bindUI() {
   buildLegends();
   const openLegend = (k) => $(`modal-leg-${k}`).classList.add('open');
   document.querySelectorAll('[data-legend]').forEach(b => b.addEventListener('click', () => openLegend(b.dataset.legend)));
+  $('btn-idx-info').addEventListener('click', () => $('modal-idx').classList.add('open'));
   $('fiche-legend').addEventListener('click', () => openLegend($('fiche-legend').dataset.kind || 'mrc'));
   document.querySelectorAll('[data-close-self]').forEach(b => b.addEventListener('click', () => b.closest('.modal').classList.remove('open')));
 

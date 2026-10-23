@@ -307,7 +307,7 @@ export function LEGEND() {
 const EN_STATIC = {
   'hdr.title': 'Forest fire predisposition of a project<span class="hdr-sub">Decision support tool — portrait of fuels, intensity potential and fire history<span class="hdr-ver">version 1.0 (beta)</span></span>',
   'loading': 'Loading data…',
-  'tab.intro': 'Introduction', 'tab.explore': 'Explore',
+  'tab.intro': 'Instructions', 'tab.explore': 'Explore',
   'pop.title': 'Welcome: forest fires and decision support for your projects',
   'pop.body': `<p><strong>For a project located in the forest (workers’ camp, road, power line, wind farm…), this application draws a forest fire portrait at two scales:</strong></p>
       <p><strong>INFO-PROJECT</strong>: the fuel composition and the fire intensity and spread potential within an adjustable buffer zone (1 to 50 km) around the project features.</p>
@@ -319,19 +319,26 @@ const EN_STATIC = {
       <p>3. Adjust the buffer zone in <strong>INFO-PROJECT</strong>; see the fire history in <strong>INFO-TERRITORY</strong>.</p>
       <p>4. The <strong>Generate a PDF report</strong> button produces the territory sheet, one sheet per checked site and a legend page.</p>
       <p>The map background shows the forest fire predisposition index (standardized index from 0 to 1, 5-km pixels). Hover over the map to read the index value.</p>
-      <p><strong>Note</strong>: these portraits rely on scientific data and do not replace the advice of the competent authorities. For more details, see the <span class="lien-onglet" data-goto="intro">INTRODUCTION</span> tab.</p>`,
+      <p><strong>Note</strong>: these portraits rely on scientific data and do not replace the advice of the competent authorities. For more details, see the <span class="lien-onglet" data-goto="intro">INSTRUCTIONS</span> tab.</p>`,
   'btn.close': 'Close',
   'rep.title': 'PDF report',
   'rep.help': 'Check the sites to include. The report starts with the territory page (regional area), followed by one page per checked site (buffer zone of <b id="rep-buf">25</b> km) and a page of legends and explanations.',
   'rep.all': 'Check all', 'rep.none': 'Uncheck all', 'rep.filter': 'Filter…',
   'rep.terrPage': 'Include the territory page (regional area)',
   'rep.cancel': 'Cancel', 'rep.go': '⬇ Generate the PDF',
-  'intro.body': `<p>In Québec, forest fires are a potentially significant threat to people and infrastructure. The exceptional 2023 season, which burned more than 4.2 million hectares, marked a turning point because of the major pressures it created, including the evacuation of thousands of people — among them several Indigenous communities — and significant property damage. As climate change is expected to intensify these phenomena, it is essential to better prepare communities to face them.</p>
-        <p>Forest fire activity varies by region and depends on three main factors. Vegetation type influences fire intensity; landscape fragmentation (water bodies, roads, agricultural and urban areas) limits risk. Weather conditions (heat, drought and wind) increase flammability and rate of spread. Finally, ignition sources differ depending on whether fires are human-caused or caused by lightning.</p>
-        <p>This study by the Regional Observatory for Boreal Forest Research assesses the predisposition of non-Indigenous and Indigenous communities in Québec to be affected by forest fires. The index reflects the long-term probability that a populated place is threatened or reached by a forest fire, based on its location, fire history, regional climate and vegetation (fuels).</p>
-        <p>To make scientific knowledge on forest fires available, the Observatory produced this application as an interactive map. This tool is geared toward decision support: it portrays fuels and fire history around projects provided by the user (workers’ camps, roads, power lines, wind farms…), anywhere in Québec.</p>
+  'intro.body': `<p class="intro-lead"><strong>Forest fire predisposition of a project</strong> is a decision support tool developed by the Regional Observatory for Boreal Forest Research (CREB) at the Université du Québec à Chicoutimi (UQAC). It assesses the forest fire predisposition of the territory where a project is located, based on fire history and on a portrait of forest fuels.</p>
         <p>In collaboration with the Société de protection des forêts contre le feu (SOPFEU), the Ministère de la Sécurité intérieure du Québec (MSI) and the Ministère des Ressources naturelles et des Forêts du Québec (MRNF).</p>
-        <p style="background:#fff8e1; border-left:3px solid #d4821a; padding:8px 10px; border-radius:0 4px 4px 0;"><strong>Caution</strong>: the indices calculated for the various regions do not indicate an actual fire danger, which varies daily during the season according to weather conditions.</p>`,
+        <h3 class="intro-h">What the tool is for</h3>
+        <p>For a project located in a forested area (workers’ camp, road, power line, wind farm, mine site…), the tool documents, from the planning stage, the forest fire context of the project: which fuels surround it, with what intensity and spread potential, and how often the surrounding territory has burned in the past. This information can support site selection, the comparison of alternatives, an impact assessment or the preparation of an emergency plan.</p>
+        <h3 class="intro-h">How it works</h3>
+        <ol class="intro-steps">
+          <li><strong>Project footprint.</strong> Import a file containing the project features: points, lines or polygons (KML, KMZ, Shapefile, GeoJSON, GeoPackage, GPX, CSV…). Coordinates are reprojected automatically. Features more than 50 km apart form separate <strong>sites</strong>, each with its own sheet.</li>
+          <li><strong>INFO-PROJECT.</strong> Within an adjustable buffer zone of 1 to 50 km (25 km by default) around the site features, the tool computes the share of each fuel type (Canadian Forest Fire Behavior Prediction System) and of each intensity and spread potential class, as well as the mean predisposition index.</li>
+          <li><strong>Regional area (INFO-TERRITORY).</strong> Since fires are rare events at the scale of a single site, their history is compiled over a larger area: by default, a 100-km square centred on the project (50, 150 or 200 km as an option), or an RCM, a rectangle drawn on the map or an imported area. INFO-TERRITORY shows the number of fires per year by cause (human or lightning) and the areas burned.</li>
+          <li><strong>PDF report.</strong> The report gathers the territory sheet, one sheet per site and a page of legends and explanations.</li>
+        </ol>
+        <p>Calculations are performed directly in your browser: imported files stay on your computer and are not sent to any server.</p>
+        <p class="intro-warn"><strong>Caution</strong>: the tool describes a long-term predisposition. It does not indicate the actual fire danger, which varies daily during the season according to weather conditions, and does not replace the advice of the competent authorities.</p>`,
   'intro.authors': 'Authors',
   'src.title': 'Data sources',
   'src.fires': 'Forest fires',
@@ -353,7 +360,8 @@ const EN_STATIC = {
   'btn.zoneFile': '📂 Import my area (polygon)',
   'zoneFile.help': 'Click or drag and drop a polygon file: it becomes the regional area.',
   'drop.hint': 'Drop the project file',
-  'idx.label': 'Forest fire predisposition index ℹ',
+  'idx.label': 'Forest fire predisposition index',
+  'title.idxInfo': 'What is the predisposition index?', 'leg.idxTitle': 'Forest fire predisposition index',
   'lowHigh': 'Low → High',
   'box.mrc': 'INFO-TERRITORY', 'box.lh': 'INFO-PROJECT',
   'hint.mrc': 'Click INFO-TERRITORY to see the fire history of the regional area: number of fires by cause and area burned each year.',

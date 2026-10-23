@@ -43,7 +43,7 @@
       <p>3. Ajustez la zone tampon dans <strong>INFO-PROJET</strong> ; consultez l'historique des feux dans <strong>INFO-TERRITOIRE</strong>.</p>
       <p>4. Le bouton <strong>Générer un rapport PDF</strong> produit la fiche territoire, une fiche par site coché et une page de légendes.</p>
       <p>La carte affiche en fond l'indice de prédisposition aux feux de forêt (indice standardisé de 0 à 1, pixels de 5 km). Survolez la carte pour lire la valeur de l'indice.</p>
-      <p><strong>Note</strong> : ces portraits reposent sur des données scientifiques et ne remplacent pas l'avis des autorités compétentes. Pour plus de détails, consultez l'onglet <span class="lien-onglet" data-goto="intro">INTRODUCTION</span>.</p>
+      <p><strong>Note</strong> : ces portraits reposent sur des données scientifiques et ne remplacent pas l'avis des autorités compétentes. Pour plus de détails, consultez l'onglet <span class="lien-onglet" data-goto="intro">INSTRUCTIONS</span>.</p>
     </div>
     <div class="modal-foot"><button class="btn navy" data-close data-i18n="btn.close">Fermer</button></div>
   </div>
@@ -92,19 +92,26 @@
 <div id="app">
   <div id="panel">
     <div id="panel-tabs">
-      <button class="tab-btn" data-tab="intro" data-i18n="tab.intro">Introduction</button>
+      <button class="tab-btn" data-tab="intro" data-i18n="tab.intro">Instructions</button>
       <button class="tab-btn active" data-tab="explorer" data-i18n="tab.explore">Explorer</button>
     </div>
 
-    <!-- ═══ Onglet Introduction ═══ -->
+    <!-- ═══ Onglet Instructions ═══ -->
     <div id="tab-intro" class="tab-pane">
-      <div style="font-size:12.5px; line-height:1.55; display:flex; flex-direction:column; gap:14px;" data-i18n="intro.body">
-        <p>Au Québec, les feux de forêt représentent une menace potentiellement importante pour les populations et les infrastructures. La saison exceptionnelle de 2023, qui a brûlé plus de 4,2 millions d'hectares, a marqué un tournant en raison des pressions majeures qu'elle a exercées, notamment l'évacuation de milliers de personnes — dont plusieurs communautés autochtones — et des dommages matériels importants. Dans un contexte où les changements climatiques devraient intensifier ces phénomènes, il devient essentiel de mieux préparer les communautés à y faire face.</p>
-        <p>L'activité des feux de forêt varie selon les régions et repose sur trois principaux facteurs. Le type de végétation influence leur intensité ; la fragmentation du territoire (plans d'eau, routes, zones agricoles et urbaines) limite les risques. Les conditions météo (chaleur, sécheresse et vent) augmentent l'inflammabilité et la vitesse de propagation. Enfin, les sources d'ignition diffèrent selon qu'elles soient d'origine humaine ou causées par la foudre.</p>
-        <p>Cette étude réalisée par l'Observatoire régional de recherche sur la forêt boréale évalue la prédisposition des communautés allochtones et autochtones du Québec à être touchées par les feux de forêt. L'indice calculé reflète la probabilité à long terme qu'un milieu habité soit menacé ou atteint par un feu de forêt en fonction de sa localisation, de l'historique des feux, du climat régional et de la végétation (combustibles).</p>
-        <p>Dans l'optique de rendre disponibles les connaissances scientifiques sur les feux de forêt, l'Observatoire a produit cette application sous forme de carte interactive. Cet outil est orienté vers l'aide à la décision : elle dresse le portrait des combustibles et de l'historique des feux autour de projets fournis par l'utilisateur (camps de travailleurs, routes, lignes électriques, parcs éoliens…), partout au Québec.</p>
-        <p>En collaboration avec la Société de Protection des Forêts contre le Feu (SOPFEU), le Ministère de la Sécurité Intérieure du Québec (MSI) et le Ministère des Ressources Naturelles et des Forêts du Québec (MRNF)</p>
-        <p style="background:#fff8e1; border-left:3px solid #d4821a; padding:8px 10px; border-radius:0 4px 4px 0;"><strong>Attention</strong> : les indices calculés pour les différentes régions n'indiquent pas un danger réel d'incendie, celui-ci variant quotidiennement au cours de la saison selon les conditions météorologiques.</p>
+      <div class="intro-body" data-i18n="intro.body">
+        <p class="intro-lead"><strong>Prédisposition aux feux de forêt d'un projet</strong> est un outil d'aide à la décision développé par l'Observatoire régional de recherche sur la forêt boréale (CREB) de l'Université du Québec à Chicoutimi (UQAC). Il permet d'évaluer la prédisposition aux feux de forêt du territoire où s'inscrit un projet, à partir de l'historique des feux et du portrait des combustibles forestiers.</p>
+        <p>En collaboration avec la Société de protection des forêts contre le feu (SOPFEU), le ministère de la Sécurité intérieure du Québec (MSI) et le ministère des Ressources naturelles et des Forêts du Québec (MRNF).</p>
+        <h3 class="intro-h">À quoi sert l'outil</h3>
+        <p>Pour un projet situé en milieu forestier (camp de travailleurs, route, ligne électrique, parc éolien, site minier…), l'outil documente dès la planification le contexte de feux de forêt dans lequel le projet s'inscrit : quels combustibles l'entourent, avec quel potentiel d'intensité et de propagation, et à quelle fréquence le territoire environnant a brûlé par le passé. Ces renseignements peuvent appuyer le choix d'un emplacement, la comparaison de variantes, une étude d'impact ou la préparation d'un plan de mesures d'urgence.</p>
+        <h3 class="intro-h">Fonctionnement</h3>
+        <ol class="intro-steps">
+          <li><strong>Emprise du projet.</strong> Importez un fichier contenant les entités du projet : points, lignes ou polygones (KML, KMZ, Shapefile, GeoJSON, GeoPackage, GPX, CSV…). Les coordonnées sont reprojetées automatiquement. Les entités distantes de plus de 50 km forment des <strong>sites</strong> distincts, chacun avec sa fiche.</li>
+          <li><strong>INFO-PROJET.</strong> Dans une zone tampon ajustable de 1 à 50 km (25 km par défaut) autour des entités du site, l'outil calcule la part de chaque type de combustible (Méthode canadienne de prévision du comportement des incendies de forêt) et de chaque classe de potentiel d'intensité et de propagation, ainsi que l'indice de prédisposition moyen.</li>
+          <li><strong>Zone régionale (INFO-TERRITOIRE).</strong> Les feux étant des événements rares à l'échelle d'un site, leur historique est compilé dans une zone plus vaste : par défaut, un carré de 100 km de côté centré sur le projet (50, 150 ou 200 km au choix), ou encore une MRC, un rectangle tracé sur la carte ou une zone importée. INFO-TERRITOIRE présente le nombre de feux par année selon la cause (humaine ou foudre) et les superficies brûlées.</li>
+          <li><strong>Rapport PDF.</strong> Le rapport rassemble la fiche territoire, une fiche par site et une page de légendes et d'explications.</li>
+        </ol>
+        <p>Les calculs sont faits directement dans votre navigateur : les fichiers importés restent sur votre poste et ne sont transmis à aucun serveur.</p>
+        <p class="intro-warn"><strong>Attention</strong> : l'outil décrit une prédisposition à long terme. Il n'indique pas le danger d'incendie réel, qui varie chaque jour au cours de la saison selon les conditions météorologiques, et ne remplace pas l'avis des autorités compétentes.</p>
       </div>
       <div class="box auteurs-box">
         <div class="auteur-title" data-i18n="intro.authors">Auteurs</div>
@@ -147,7 +154,7 @@
 
       <!-- 1. Projet : emprise importée par l'utilisateur -->
       <div class="panel-section drop-zone" id="sec-proj">
-        <div class="label-row"><span class="panel-label" data-i18n="lbl.project">1. Emprise du projet</span>
+        <div class="label-row"><span class="panel-label step-label" data-i18n="lbl.project">1. Emprise du projet</span>
           <span class="info-tip has-tip" tabindex="0">ℹ<span class="tooltip-info fmt-tip"></span></span></div>
         <div class="btn-row">
           <button class="btn" id="btn-proj" data-i18n="btn.proj">📂 Importer l'emprise du projet</button>
@@ -165,7 +172,7 @@
 
       <!-- 2. Zone régionale (INFO-TERRITOIRE) -->
       <div class="panel-section">
-        <span class="panel-label" data-i18n="lbl.territory">2. Zone régionale (INFO-TERRITOIRE)</span>
+        <span class="panel-label step-label" data-i18n="lbl.territory">2. Zone régionale (INFO-TERRITOIRE)</span>
         <div class="seg" id="mode-seg">
           <button data-mode="auto" class="active" data-i18n="mode.auto">Automatique</button>
           <button data-mode="mrc" data-i18n="mode.mrc">MRC</button>
@@ -209,9 +216,9 @@
       <hr class="divider" />
 
       <!-- Indice de prédisposition -->
-      <div class="box has-tip" id="expo-box" tabindex="0">
-        <span class="panel-label" data-i18n="idx.label">Indice de prédisposition aux feux ℹ</span>
-        <div class="tooltip-info" id="idx-tip"></div>
+      <div class="box" id="expo-box">
+        <div class="label-row"><span class="panel-label" data-i18n="idx.label">Indice de prédisposition aux feux</span>
+          <button class="info-btn" id="btn-idx-info" data-i18n-title="title.idxInfo" title="Qu'est-ce que l'indice de prédisposition ?">i</button></div>
         <div class="legend-bar"><div class="band" id="expo-band"></div><div class="marker" id="expo-marker"></div></div>
         <div class="legend-labels"><span>0</span><span data-i18n="lowHigh">Faible → Élevé</span><span>1</span></div>
         <div id="expo-value"></div>
@@ -320,6 +327,13 @@
 </div>
 
 <!-- ═══ Légende — fiche régionale (contenu généré : js/i18n.js → LEGEND) ═══ -->
+<div id="modal-idx" class="modal modal-top">
+  <div class="modal-box" style="width:min(92vw,640px)">
+    <div class="modal-head"><h2 data-i18n="leg.idxTitle">Indice de prédisposition aux feux de forêt</h2><button class="modal-close" data-close-self>✕</button></div>
+    <div class="modal-body leg-body" id="idx-body"></div>
+  </div>
+</div>
+
 <div id="modal-leg-mrc" class="modal modal-top">
   <div class="modal-box" style="width:min(92vw,640px)">
     <div class="modal-head"><h2 data-i18n="leg.mrcTitle">Légende — Fiche territoire</h2><button class="modal-close" data-close-self>✕</button></div>
