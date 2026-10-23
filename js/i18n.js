@@ -349,7 +349,7 @@ const EN_STATIC = {
   'src.admin.txt': 'RCM · Municipality',
   'src.places': 'Populated places',
   'src.places.txt': 'Indigenous place names: preliminary version, to be validated (FNQLSDI)',
-  'btn.info': 'ℹ Instructions', 'btn.reset': '↺ Reset',
+  'btn.info': 'ℹ Quick guide', 'btn.reset': '↺ Reset',
   'title.reset': 'Clear the project and the regional area, and restore the initial map display',
   'lbl.project': '1. Project footprint', 'btn.proj': '📂 Import the project footprint', 'title.projClear': 'Remove the project',
   'lbl.territory': '2. Regional area (INFO-TERRITORY)', 'mode.auto': 'Automatic', 'mode.mrc': 'RCM', 'mode.rect': 'Rectangle', 'mode.file': 'My area',
