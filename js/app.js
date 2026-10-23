@@ -521,10 +521,25 @@ async function importProject(files) {
   try {
     const { name, features } = await readGeoFiles(files);
     setProject(buildProject(name, features));
+    showImportNotice();
   } catch (err) {
     logEvent('import projet', err.code || err.message || err);
     msg.innerHTML = `<span class="err">${esc(importErrMsg(err))}</span>`;
   }
+}
+
+/** Fenêtre d'explication après l'import : où lire les résultats et comment ajuster les zones d'analyse. */
+function showImportNotice() {
+  const p = S.project, z = S.zone?.kind;
+  const terr = S.mode === 'auto' && z?.k === 'auto'
+    ? t('imp.auto', { s: Math.round(z.side) }) + (z.enlarged ? ` ${t('imp.big')}` : '')
+    : t('imp.other');
+  $('imp-title').textContent = t('imp.title');
+  $('imp-body').innerHTML = [
+    p.sites.length > 1 ? `<p class="warn">${t('imp.sites', { n: p.sites.length, d: SITE_GAP_KM })}</p>` : '',
+    `<p>${t('imp.proj', { buf: S.bufKm })}</p>`, `<p>${terr}</p>`,
+  ].join('');
+  $('modal-import').classList.add('open');
 }
 
 function projMsg() {
@@ -1085,7 +1100,7 @@ function bindUI() {
   const closeModals = () => document.querySelectorAll('.modal').forEach(m => m.classList.remove('open'));
   document.querySelectorAll('[data-close]').forEach(b => b.addEventListener('click', closeModals));
   document.querySelectorAll('.modal').forEach(m => m.addEventListener('click', (e) => {
-    if (e.target !== m) return;
+    if (e.target !== m || m.classList.contains('modal-sticky')) return;   // modal-sticky : bouton Fermer seulement
     if (m.classList.contains('modal-top')) m.classList.remove('open'); else closeModals();
   }));
   $('btn-info').addEventListener('click', () => $('popup-accueil').classList.add('open'));

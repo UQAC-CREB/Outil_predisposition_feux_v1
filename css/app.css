@@ -222,6 +222,8 @@ body {
 
 /* Légendes des fiches */
 .modal.modal-top { z-index: 450; }
+.imp-body { font-size: 14px; line-height: 1.5; display: flex; flex-direction: column; gap: 10px; }
+.imp-body p { margin: 0; }
 .btn-legend { background: #f1c40f; color: #1a252f; border: 2px solid #d4ac0d; font-weight: 700; }
 .btn-legend:hover { background: #d4ac0d; }
 .leg-body { font-size: 14px; line-height: 1.45; }

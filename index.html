@@ -328,6 +328,15 @@
 </div>
 
 <!-- ═══ Légende — fiche régionale (contenu généré : js/i18n.js → LEGEND) ═══ -->
+<!-- Après l'import d'un projet : explications, fermeture par le bouton seulement -->
+<div id="modal-import" class="modal modal-top modal-sticky">
+  <div class="modal-box" style="width:min(92vw,520px)">
+    <div class="modal-head"><h2 id="imp-title"></h2></div>
+    <div class="modal-body imp-body" id="imp-body"></div>
+    <div class="modal-foot"><button class="btn navy" data-close-self data-i18n="btn.close">Fermer</button></div>
+  </div>
+</div>
+
 <div id="modal-idx" class="modal modal-top">
   <div class="modal-box" style="width:min(92vw,640px)">
     <div class="modal-head"><h2 data-i18n="leg.idxTitle">Indice de prédisposition aux feux de forêt</h2><button class="modal-close" data-close-self>✕</button></div>
