@@ -67,7 +67,7 @@ export const pShort = (c) => (c.v === 0 ? (lang === 'en' ? 'No fuel' : 'Absence 
 
 // ── Textes générés ─────────────────────────────────────────────────────────
 const STR = {
-  'app.title': ['Prédisposition aux feux de forêt d'un projet — outil d'aide à la décision', 'Forest fire predisposition of a project — decision support tool'],
+  'app.title': ["Prédisposition aux feux de forêt d'un projet — outil d'aide à la décision", 'Forest fire predisposition of a project — decision support tool'],
   'mrc': ['MRC', 'RCM'],
   'loading.error': ['Erreur de chargement — voir la console.', 'Loading error — see the console.'],
   'err.generic': ['Une erreur est survenue. Si l’application ne répond plus, rechargez la page ; pour nous aider, copiez le rapport d’erreur et transmettez-le à l’équipe.',
@@ -202,7 +202,7 @@ const STR = {
   'rep.done': ['Rapport généré ({n} page(s)).', 'Report generated ({n} page(s)).'],
   'rep.file': ['Rapport_feux', 'Fire_report'],
   // Rapport (PDF)
-  'pdf.generated': ['Généré le {d} - outil d'aide à la décision, version 1.0 (bêta)', 'Generated on {d} - decision support tool, version 1.0 (beta)'],
+  'pdf.generated': ["Généré le {d} - outil d'aide à la décision, version 1.0 (bêta)", 'Generated on {d} - decision support tool, version 1.0 (beta)'],
   'pdf.obs': ['Observatoire régional de recherche sur la forêt boréale', 'Regional Observatory for Boreal Forest Research'],
   'pdf.terrTitle': ['Portrait de l\'historique des feux de forêt {a} à {b}', 'Forest fire history portrait {a} to {b}'],
   'pdf.idxMean': ['Indice de prédisposition moyen : {v}', 'Mean predisposition index: {v}'],
@@ -307,7 +307,7 @@ export function LEGEND() {
 const EN_STATIC = {
   'hdr.title': 'Forest fire predisposition of a project<span class="hdr-sub">Decision support tool — portrait of fuels, intensity potential and fire history<span class="hdr-ver">version 1.0 (beta)</span></span>',
   'loading': 'Loading data…',
-  'tab.intro': 'Introduction', 'tab.explore': 'Explore', 'tab.res': 'Useful resources',
+  'tab.intro': 'Introduction', 'tab.explore': 'Explore',
   'pop.title': 'Welcome: forest fires and decision support for your projects',
   'pop.body': `<p><strong>For a project located in the forest (workers’ camp, road, power line, wind farm…), this application draws a forest fire portrait at two scales:</strong></p>
       <p><strong>INFO-PROJECT</strong>: the fuel composition and the fire intensity and spread potential within an adjustable buffer zone (1 to 50 km) around the project features.</p>
@@ -319,7 +319,7 @@ const EN_STATIC = {
       <p>3. Adjust the buffer zone in <strong>INFO-PROJECT</strong>; see the fire history in <strong>INFO-TERRITORY</strong>.</p>
       <p>4. The <strong>Generate a PDF report</strong> button produces the territory sheet, one sheet per checked site and a legend page.</p>
       <p>The map background shows the forest fire predisposition index (standardized index from 0 to 1, 5-km pixels). Hover over the map to read the index value.</p>
-      <p><strong>Note</strong>: these portraits rely on scientific data and do not replace the advice of the competent authorities — see the <span class="lien-onglet" data-goto="ressources">USEFUL RESOURCES</span> tab. For more details, see the <span class="lien-onglet" data-goto="intro">INTRODUCTION</span> tab.</p>`,
+      <p><strong>Note</strong>: these portraits rely on scientific data and do not replace the advice of the competent authorities. For more details, see the <span class="lien-onglet" data-goto="intro">INTRODUCTION</span> tab.</p>`,
   'btn.close': 'Close',
   'rep.title': 'PDF report',
   'rep.help': 'Check the sites to include. The report starts with the territory page (regional area), followed by one page per checked site (buffer zone of <b id="rep-buf">25</b> km) and a page of legends and explanations.',
@@ -363,16 +363,6 @@ const EN_STATIC = {
   'title.log': 'Logarithmic scale for burned areas', 'title.legend': 'Legend and explanation',
   'title.toggle': 'Show / hide the charts',
   'btn.report': '⬇ Generate a PDF report',
-  'res.intro1': 'Prepare to face a forest fire: know what to do to ensure your safety and that of your loved ones, and to protect your home and property.',
-  'res.intro2': 'In collaboration with the Société de protection des forêts contre le feu (SOPFEU), the Ministère de la Sécurité intérieure du Québec (MSI) and the Ministère des Ressources naturelles et des Forêts du Québec (MRNF).',
-  'res.gov': 'Government of Québec — Forest fires (quebec.ca, in French)',
-  'res.g1': 'Mitigating forest fire risks', 'res.g2': 'Preparing for a forest fire', 'res.g3': 'Protecting your home and property',
-  'res.g4': 'Safety instructions during a forest fire', 'res.g5': 'Protecting your health from smoke',
-  'res.g6': 'Returning home safely after a forest fire',
-  'res.sopfeu': 'SOPFEU — Forest fire protection agency (in French)',
-  'res.sub': 'See the following links to learn about:',
-  'res.s1': 'Preventing forest fires', 'res.s2': 'Fire danger and current restrictions', 'res.s3': 'Protecting your home',
-  'res.go': '→ Consult',
   'draw.hint': 'Click and drag to draw the area · Esc to cancel',
   'lp.title': '☰ Layers',
   'ly.indice': 'Predisposition index (5 km)', 'ly.opacity': 'Opacity', 'ly.indiceNote': 'Hover over the map to read a pixel value.',

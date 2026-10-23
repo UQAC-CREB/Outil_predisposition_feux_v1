@@ -286,28 +286,6 @@ body {
 .auteurs-box a, #sources-section a { color: var(--accent); text-decoration: none; }
 .auteurs-box a:hover, #sources-section a:hover { text-decoration: underline; }
 
-/* ── Onglet Ressources utiles ── */
-.res-intro { font-size: 12.5px; color: var(--text-main); line-height: 1.5; }
-.res-section { display: flex; flex-direction: column; gap: 8px; }
-.res-section-header {
-  font-family: 'Oswald', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.8px;
-  text-transform: uppercase; color: var(--header-text); border-bottom: 2px solid #c5d5c5; padding-bottom: 5px;
-}
-.res-section-header a { color: inherit; text-decoration: none; }
-.res-section-header a:hover { color: var(--accent); }
-.res-sub-intro { font-size: 12px; color: var(--text-muted); line-height: 1.4; }
-.ressource-card {
-  background: var(--box-bg); border: 1px solid var(--panel-border); border-radius: 8px;
-  padding: 12px 14px; box-shadow: var(--box-shadow); display: flex; flex-direction: column; gap: 6px;
-}
-.ressource-card .res-label-lg { font-size: 14.4px; font-weight: 700; color: #000; line-height: 1.35; }
-.ressource-card a.res-link {
-  display: inline-flex; align-items: center; gap: 5px; background: var(--accent); color: #fff;
-  font-family: 'Oswald', sans-serif; font-size: 11px; letter-spacing: 0.8px; text-transform: uppercase;
-  padding: 5px 11px; border-radius: 5px; text-decoration: none; align-self: flex-start;
-}
-.ressource-card a.res-link:hover { background: var(--accent-dark); }
-
 /* ── Resizer ── */
 #resizer { width: 6px; flex-shrink: 0; background: var(--panel-border); cursor: col-resize; position: relative; z-index: 5; }
 #resizer:hover, #resizer.dragging { background: var(--accent); }
