@@ -1,0 +1,6 @@
+# Tuiles raster PMTiles et contours de feux (hébergés sur Cloudflare R2, trop lourds pour Git)
+tiles_v3/
+# Fichiers intermédiaires des scripts
+scripts/_*
+__pycache__/
+.wrangler/
